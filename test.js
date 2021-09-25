@@ -1,0 +1,12 @@
+let qs = new QueryString(window.location.search);
+qs.set("hello", "world");
+console.log("query:", qs.query);
+console.log("map:", qs.map);
+console.log("entries:", qs.entries);
+console.log("foo:", qs.get("foo"));
+qs.entries = [["hello", "world"], ["random", "stuff"]];
+console.log("qs after setting entries:", qs.entries);
+qs.map = {foo: "bar", key: "value"};
+console.log("qs after setting map:", qs.entries);
+qs.query = "?random=key&quoted%2Dkey=quoted%2Dvalue";
+console.log("qs after setting query:", qs.entries);

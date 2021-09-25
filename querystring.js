@@ -2,7 +2,7 @@ class QueryString {
   #entries;
 
   constructor(queryString) {
-    if (queryString !== undefined) {
+    if (typeof queryString === "string" && queryString !== "") {
       this.#entries = QueryString.parseQueryString(queryString);
     } else {
       this.#entries = [];
